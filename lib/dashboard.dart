@@ -174,7 +174,7 @@ class _DashboardState extends State<Dashboard> {
                       fillColor: Colors.white,
                       hintText: "Description",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)))),
+                          borderRadius: BorderRadius.all(Radius.circular(15)))),
                 ).p4().px8(),
                 ElevatedButton(onPressed: (){
                 //  addTodo();
