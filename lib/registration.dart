@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:to_do_app/loginPage.dart';
@@ -99,7 +98,7 @@ class _RegistrationState extends State<Registration> {
                   HStack([
                     GestureDetector(
                       onTap: ()=>{
-                        RegisterUser()
+                        RegisterUser(),
                       },
                         child: VxBox(child: "Register".text.white.makeCentered().p16()).green600.roundedLg.make().px16().py16(),
                     ),

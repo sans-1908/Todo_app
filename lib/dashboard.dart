@@ -1,12 +1,9 @@
-//import 'dart:convert';
 import 'package:flutter/material.dart';
-//import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:velocity_x/velocity_x.dart';
 //import 'package:http/http.dart' as http;
 //import 'config.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 class Dashboard extends StatefulWidget {
- // final token;
   const Dashboard({Key? key}) : super(key: key);
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -16,64 +13,7 @@ class _DashboardState extends State<Dashboard> {
   TextEditingController _todoTitle = TextEditingController();
   TextEditingController _todoDesc = TextEditingController();
   List? items;
-  @override
- /* void initState() {
-    // TODO: implement initState
-    super.initState();
-    Map<String,dynamic> jwtDecodedToken = JwtDecoder.decode(widget.token);
-    userId = jwtDecodedToken['_id'];
-    getTodoList(userId);
-  }
-  void addTodo() async{
-    if(_todoTitle.text.isNotEmpty && _todoDesc.text.isNotEmpty){
-      var regBody = {
-        "userId":userId,
-        "title":_todoTitle.text,
-        "desc":_todoDesc.text
-      };
-      var response = await http.post(Uri.parse(addtodo),
-          headers: {"Content-Type":"application/json"},
-          body: jsonEncode(regBody)
-      );
-      var jsonResponse = jsonDecode(response.body);
-      print(jsonResponse['status']);
-      if(jsonResponse['status']){
-        _todoDesc.clear();
-        _todoTitle.clear();
-        Navigator.pop(context);
-        getTodoList(userId);
-      }else{
-        print("SomeThing Went Wrong");
-      }
-    }
-  }
-  void getTodoList(userId) async {
-    var regBody = {
-      "userId":userId
-    };
-    var response = await http.post(Uri.parse(getToDoList),
-        headers: {"Content-Type":"application/json"},
-        body: jsonEncode(regBody)
-    );
-    var jsonResponse = jsonDecode(response.body);
-    items = jsonResponse['success'];
-    setState(() {
-    });
-  }
-  void deleteItem(id) async{
-    var regBody = {
-      "id":id
-    };
-    var response = await http.post(Uri.parse(deleteTodo),
-        headers: {"Content-Type":"application/json"},
-        body: jsonEncode(regBody)
-    );
-    var jsonResponse = jsonDecode(response.body);
-    if(jsonResponse['status']){
-      getTodoList(userId);
-    }
-  }
-  */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
