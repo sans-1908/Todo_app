@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:to_do_app/loginPage.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'applogo.dart';
 //import 'loginPage.dart';
+import 'package:http/http.dart' as http;
+import 'package:to_do_app/config.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -16,7 +20,16 @@ class _RegistrationState extends State<Registration> {
 
   void RegisterUser()async{
     if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
+       var regBody={
+        "email":"",
+        "password":"",
+       };
+       var response=await http.post(Uri.parse(registration),
+       headers: {"Content-Type":"application/json"},
+       body:jsonEncode(regBody)
+       );      
 
+       print(response);
     }
     else{
       setState(() {
@@ -86,7 +99,7 @@ class _RegistrationState extends State<Registration> {
                   HStack([
                     GestureDetector(
                       onTap: ()=>{
-                        
+                        RegisterUser()
                       },
                         child: VxBox(child: "Register".text.white.makeCentered().p16()).green600.roundedLg.make().px16().py16(),
                     ),
